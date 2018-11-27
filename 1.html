@@ -49,7 +49,7 @@
         }
         this.eat = function () {
             if (rat.status === "song" || rat.status === "Song") {
-                this.weight++;
+                this.weight+=rat.weight;
                 this.speedMax--;
                 document.write("Can nang cua meo bay gio la " + this.weight + "<br>");
                 document.write("Toc do toi da cua meo bay gio la " + this.speedMax + "<br>");
