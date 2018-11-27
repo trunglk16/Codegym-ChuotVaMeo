@@ -37,6 +37,8 @@
             document.write("Meo Meo" + "<br>")
         }
         this.catch = function () {
+            document.write("Meo " + this.name + " da nhin thay con chuot " + rat.name + "<br>");
+            document.write("Meo " + this.name + " bat dau duoi chuot " + rat.name + "<br>");
             if (this.speedMax > rat.speed) {
                 i++;
                 document.write("Meo " + this.name + " da bat duoc con chuot " + rat.name + "<br>");
@@ -44,6 +46,7 @@
                 document.write("Meo " + this.name + " da bat duoc " + i + " con chuot" + "<br>");
             } else {
                 document.write("Meo " + this.name + " qua map de bat duoc con chuot nay" + "<br>");
+                document.write("Chuot " + rat.name + " da chay thoat thanh cong " +"<br>");
                 rat.sound();
             }
         }
