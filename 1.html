@@ -14,7 +14,7 @@
         }
         this.weight = weight;
         this.setWeight = function () {
-            this.weight = prompt("Nhap can nang con chuot");
+            this.weight = parseInt(prompt("Nhap can nang con chuot"));
         }
         this.speed = speed;
         this.setSpeed = function () {
@@ -37,23 +37,25 @@
             document.write("Meo Meo" + "<br>")
         }
         this.catch = function () {
-            document.write("Meo " + this.name + " da nhin thay con chuot " + rat.name + "<br>");
+            document.write("Meo " + this.name + " da nham vao con chuot " + rat.name + "<br>");
             document.write("Meo " + this.name + " bat dau duoi chuot " + rat.name + "<br>");
             if (this.speedMax > rat.speed) {
                 i++;
                 document.write("Meo " + this.name + " da bat duoc con chuot " + rat.name + "<br>");
                 this.sound();
                 document.write("Meo " + this.name + " da bat duoc " + i + " con chuot" + "<br>");
+                this.eat();
             } else {
                 document.write("Meo " + this.name + " qua map de bat duoc con chuot nay" + "<br>");
-                document.write("Chuot " + rat.name + " da chay thoat thanh cong " +"<br>");
+                document.write("Chuot " + rat.name + " da chay thoat thanh cong " + "<b3r>");
                 rat.sound();
             }
         }
         this.eat = function () {
             if (rat.status === "song" || rat.status === "Song") {
-                this.weight+=rat.weight;
+                this.weight += rat.weight;
                 this.speedMax--;
+                document.write("Meo " + this.name + " da an thit chuot " + rat.name + "<br>");
                 document.write("Can nang cua meo bay gio la " + this.weight + "<br>");
                 document.write("Toc do toi da cua meo bay gio la " + this.speedMax + "<br>");
 
@@ -75,16 +77,20 @@
 
         console.log(rat);
         cat.catch();
-        cat.eat();
 
     }
 
     var a = parseInt(prompt("Nhap so con chuot co trong tro choi"));
 
-    for (var j = 0; j < a; j++ ){
-        alert("Con chuot thu " + (j+1));
+    for (var j = 0; j < a; j++) {
+        if (j === 0) {
+            document.write("Co " + a + " con chuot o trong nha cua meo " + cat.name + "<br>");
+        }
+        alert("Con chuot thu " + (j + 1));
         game()
+        document.write("<br>");
+
     }
- </script>
+</script>
 </body>
 </html>
