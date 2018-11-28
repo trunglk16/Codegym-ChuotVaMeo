@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>[Bài tập] Phát triển chương trình sử dụng Remote để điều khiển TiVi</title>
+    <meta charset="UTF-8">
+</head>
+<body>
+<form>
+    <input type="button" value="3" onclick="remote.setChannel(3);">
+</form>
+<script>
+    var Remote = function (channel, volume) {
+        this.volume = volume;
+        this.channel = channel;
+        this.getVolume = function () {
+            return volume;
+        };
+        this.setVolume = function (vol) {
+            this.volume = vol;
+        };
+        this.getChannel = function () {
+            return this.channel;
+        };
+        this.setChannel = function (chan) {
+            this.channel = chan;
+        }
+    };
+    var TV = function (channel1, volume1) {
+        this.volume1 = volume1;
+        this.channel1 = channel1;
+        this.status = false;
+        this.remoteTv = new Remote();
+        console.log(channel1);
+        console.log(volume1);
+        this.getVolume1 = function () {
+            return this.remoteTv.getVolume();
+        };
+        this.setVolume1 = function (x) {
+            //this.volume1 = vol1;
+            return this.remoteTv.setVolume(x);
+        };
+        this.getChannel1 = function () {
+            return this.remoteTv.getChannel();
+        };
+        this.setChannel1 = function (x) {
+            //this.channel1 = chan1;
+            return this.remoteTv.setChannel(x);
+        };
+        /*this.connectToRemote = function () {
+            myRemote.setChannel =  this.setChannel1;
+            myRemote.setVolume = this.setVolume1;
+            this.getChannel1();
+            this.getVolume1();
+        }*/
+
+    };
+
+    var myTV = new TV(6, 7);
+    //  var myRemote = new Remote(6.7);
+    var channelTV = myTV.channel1;
+    alert("Kênh hiện thời đang phát là: " + channelTV);
+    var volumeTV = myTV.volume1;
+    alert("Âm lượng hiện thời đang phát là: " + volumeTV);
+    var a= myTV.setChannel1(5);
+    console.log(myTV.getChannel1());
+
+
+
+</script>
+</body>
+</html>
